@@ -47,7 +47,7 @@
 									<mainClass>org.thetransitclock.barefoot.mapcreator.MapCreator</mainClass>
 								</transformer>
 							</transformers>
-							<outputFile>target/thetransitclock-barefoot-mapcreator.jar</outputFile>
+							<outputFile>target/barefoot-gtfs-mapcreator.jar</outputFile>
 						</configuration>
 					</execution>
 				</executions>
