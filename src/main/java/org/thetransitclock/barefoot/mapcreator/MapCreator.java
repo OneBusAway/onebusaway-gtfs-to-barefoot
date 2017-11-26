@@ -87,6 +87,8 @@ public class MapCreator {
 			Set<Integer> keys = byId.keySet();
 			long segmentCounter = 0;
 			for (Integer key : keys) {
+				
+				// TODO need to implement comparator for Shape to check the sequence.
 				Collections.sort(byId.get(key));
 				Polyline polyLine = new Polyline();
 
