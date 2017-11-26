@@ -7,3 +7,17 @@ This map file can then be used to run a barefoot server that can be used for map
 
 The intention is to integrate a map matching server into TheTransitClock as an advanced option and use a barefoot server as the first implementation.
 
+# Build
+```
+mvn install
+```
+
+# Run
+```
+java -jar target thetransitclock-barefoot-mapcreator.jar
+```
+
+This will give the command line options.
+
+
+
