@@ -14,7 +14,7 @@ mvn install
 
 # Run
 ```
-java -jar target thetransitclock-barefoot-mapcreator.jar
+java -jar target/thetransitclock-barefoot-mapcreator.jar
 ```
 
 This will give the command line options.
