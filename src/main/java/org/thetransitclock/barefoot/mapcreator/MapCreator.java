@@ -40,9 +40,6 @@ public class MapCreator {
 	// Logging important in this class
 	private static final Logger logger = LoggerFactory.getLogger(MapCreator.class);
 
-	private static String gtfsFilePath = null;
-	private static String mapFilePath = null;
-
 	/**
 	 * This is run like this.
 	 * 
@@ -53,8 +50,8 @@ public class MapCreator {
 	 */
 	public static void main(String[] args) {
 		CommandLine commandLine = processCommandLineOptions(args);
-		gtfsFilePath = commandLine.getOptionValue("gtfs");
-		mapFilePath = commandLine.getOptionValue("barefootmap");
+		String gtfsFilePath = commandLine.getOptionValue("gtfs");
+		String mapFilePath = commandLine.getOptionValue("barefootmap");
 
 		GtfsReader reader = new GtfsReader();
 		String agencyId = null;
@@ -87,9 +84,8 @@ public class MapCreator {
 			Set<Integer> keys = byId.keySet();
 			long segmentCounter = 0;
 			for (Integer key : keys) {
-				
-				// TODO need to implement comparator for Shape to check the sequence.
-				Collections.sort(byId.get(key));
+							
+				Collections.sort(byId.get(key), new ShapePointComparator());
 				Polyline polyLine = new Polyline();
 
 				Point startPoint = null;
@@ -113,7 +109,7 @@ public class MapCreator {
 					polyLine.addSegment(segment, bStartNewPath);
 				}
 				BaseRoad road = new BaseRoad(new Long(key), segmentCounter, segmentCounter++, new Long(key), true,
-						(short) 1, 1F, 60F, 60F, 100F, (Polyline) polyLine);
+						(short) 1, 1F, 60F, 60F, 100F, polyLine);
 				map.add(road);
 			}
 			BfmapWriter writer = new BfmapWriter(mapFilePath);
