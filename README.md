@@ -5,7 +5,7 @@ It does this by making a Barefoot Road for each of the shapes in shapes.txt of t
 
 This map file can then be used to run a barefoot server that can be used for map matching raw AVL. 
 
-The intention is to integrate a map matching server into TheTransitClock as an advanced option and use a barefoot server as the first implementation.
+The intention is to integrate a map matching server into https://github.com/TheTransitClock as an advanced option and use a barefoot server as the first implementation.
 
 # Build
 ```
@@ -14,7 +14,7 @@ mvn install
 
 # Run
 ```
-java -jar target/barefoot-gtfs-mapcreator.jar
+java -jar target/onebusaway-barefoot-gtfs-mapcreator.jar
 ```
 
 This will give the command line options.
