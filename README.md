@@ -1,4 +1,4 @@
-# barefoot-gtfs-mapcreator
+# onebusaway-gtfs-to-barefoot
 This is an application that takes a GTFS file and produces a https://github.com/bmwcarit/barefoot map file. 
 
 It does this by making a Barefoot Road for each of the shapes in shapes.txt of the GTFS.
